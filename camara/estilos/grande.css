@@ -1,0 +1,45 @@
+/* ========================================
+   Telas maiores
+   ======================================== */
+
+@media screen and (min-width: 640px) {
+    #menu-hamburger {
+        display: none;
+    }
+
+    #nav-menu {
+        display: flex !important;
+        flex-direction: row;
+        width: auto;
+        margin-top: 0;
+        gap: 12px;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-redes {
+        justify-content: flex-end;
+    }
+
+    .hero-texto h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        padding: 30px 40px;
+    }
+}

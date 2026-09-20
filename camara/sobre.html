@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmara de Comércio de Palhoça | Sobre</title>
+    <meta name="description" content="Conheça a história de Palhoça e os dados demográficos da cidade.">
+    <meta name="author" content="Robson Sacramento Beserra">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/grande.css">
+
+    <script src="scripts/principal.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo da Câmara de Comércio de Palhoça">
+            <span>Palhoça Câmara de Comércio</span>
+        </div>
+        <button id="menu-hamburger" aria-label="Abrir menu">☰</button>
+        <nav id="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="diretorio.html">Diretório</a>
+            <a href="associe-se.html">Associe-se</a>
+            <a href="sobre.html" class="active">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Sobre Palhoça</h1>
+
+        <section>
+            <h2>História</h2>
+            <p>Palhoça é um município brasileiro do estado de Santa Catarina, localizado na região metropolitana de Florianópolis. Sua história começa no século XVIII, quando a região era habitada por povos indígenas e depois colonizada por açorianos.</p>
+            <p>O nome "Palhoça" vem das palhoças, casas rústicas cobertas de palha, que eram construídas pelos primeiros moradores.</p>
+        </section>
+
+        <section>
+            <h2>Dados Demográficos</h2>
+            <table class="tabela-dados">
+                <tr><th>População</th><td>253.469 habitantes (IBGE 2025)</td></tr>
+                <tr><th>Área</th><td>394,662 km²</td></tr>
+                <tr><th>Densidade</th><td>642 hab/km²</td></tr>
+                <tr><th>Fundação</th><td>24 de abril de 1894</td></tr>
+                <tr><th>Gentílico</th><td>palhocense</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Galeria de Imagens</h2>
+            <div class="galeria">
+                <figure>
+                    <img src="imagens/palhoca1.webp" alt="Vista da cidade" loading="lazy">
+                    <figcaption>Vista da cidade</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagens/palhoca2.webp" alt="Praia da Pinheira" loading="lazy">
+                    <figcaption>Praia da Pinheira</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagens/palhoca3.webp" alt="Pedra Branca" loading="lazy">
+                    <figcaption>Pedra Branca</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Eventos Recentes</h2>
+            <ul>
+                <li>Festa do Divino Espírito Santo (maio)</li>
+                <li>Aniversário da cidade (abril)</li>
+                <li>Festival de Praia da Pinheira (janeiro)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <h3>Palhoça Câmara de Comércio</h3>
+            <p>Rua Principal, 123</p>
+            <p>Palhoça, SC 88130-000</p>
+            <p>contato@camarapalhoca.org</p>
+            <p>(48) 3333-0000</p>
+        </div>
+        <div class="footer-redes">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">📷</a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
+        </div>
+        <div class="footer-copy">
+            <p>Projeto de Aula WDD231</p>
+            <p>Robson Sacramento Beserra</p>
+            <p>&copy; <span id="anoatual"></span> Palhoça Câmara de Comércio</p>
+            <p id="ultimaModificacao"></p>
+        </div>
+    </footer>
+</body>
+
+</html>

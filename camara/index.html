@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmara de Comércio de Palhoça | Início</title>
+    <meta name="description" content="Câmara de Comércio de Palhoça - Conectando empresas e fortalecendo o comércio local.">
+    <meta name="author" content="Robson Sacramento Beserra">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/grande.css">
+
+    <script src="scripts/principal.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo da Câmara de Comércio de Palhoça">
+            <span>Palhoça Câmara de Comércio</span>
+        </div>
+        <button id="menu-hamburger" aria-label="Abrir menu">☰</button>
+        <nav id="nav-menu">
+            <a href="index.html" class="active">Início</a>
+            <a href="diretorio.html">Diretório</a>
+            <a href="associe-se.html">Associe-se</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="imagens/hero.webp" alt="Vista da cidade de Palhoça" loading="lazy">
+            <div class="hero-texto">
+                <h1>Bem-vindo à Câmara de Comércio de Palhoça</h1>
+                <p>Conectando empresas, fortalecendo o comércio local</p>
+                <a href="associe-se.html" class="btn">Quero me associar</a>
+            </div>
+        </section>
+
+        <h2>Início</h2>
+
+        <div class="grid-3">
+            <section class="card">
+                <h3>Eventos</h3>
+                <div id="eventos-lista"></div>
+            </section>
+
+            <section class="card clima">
+                <h3>Clima Atual</h3>
+                <div id="clima-atual"></div>
+            </section>
+
+            <section class="card previsao">
+                <h3>Previsão de Clima</h3>
+                <div id="previsao-clima"></div>
+            </section>
+        </div>
+
+        <div class="grid-3 empresas">
+            <article class="empresa-card">
+                <h4>Padaria Pão Quente</h4>
+                <p class="slogan">O melhor pão da cidade</p>
+                <p><strong>E-mail:</strong> contato@paoquente.com</p>
+                <p><strong>Telefone:</strong> (48) 3333-1111</p>
+                <p><strong>Site:</strong> paoquente.com</p>
+            </article>
+            <article class="empresa-card">
+                <h4>TechPalhoça</h4>
+                <p class="slogan">Soluções em tecnologia</p>
+                <p><strong>E-mail:</strong> contato@techpalhoca.com</p>
+                <p><strong>Telefone:</strong> (48) 3333-2222</p>
+                <p><strong>Site:</strong> techpalhoca.com</p>
+            </article>
+            <article class="empresa-card">
+                <h4>Moda & Estilo</h4>
+                <p class="slogan">Vista-se bem, sinta-se bem</p>
+                <p><strong>E-mail:</strong> contato@modaestilo.com</p>
+                <p><strong>Telefone:</strong> (48) 3333-3333</p>
+                <p><strong>Site:</strong> modaestilo.com</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <h3>Palhoça Câmara de Comércio</h3>
+            <p>Rua Principal, 123</p>
+            <p>Palhoça, SC 88130-000</p>
+            <p>contato@camarapalhoca.org</p>
+            <p>(48) 3333-0000</p>
+        </div>
+        <div class="footer-redes">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">📷</a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">💼</a>
+        </div>
+        <div class="footer-copy">
+            <p>Projeto de Aula WDD231</p>
+            <p>Robson Sacramento Beserra</p>
+            <p>&copy; <span id="anoatual"></span> Palhoça Câmara de Comércio</p>
+            <p id="ultimaModificacao"></p>
+        </div>
+    </footer>
+</body>
+
+</html>
