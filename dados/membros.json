@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Padaria Pão Quente",
+        "categoria": "alimentacao",
+        "email": "contato@paoquente.com",
+        "telefone": "(48) 3333-1111",
+        "site": "paoquente.com"
+    },
+    {
+        "nome": "TechPalhoça",
+        "categoria": "tecnologia",
+        "email": "contato@techpalhoca.com",
+        "telefone": "(48) 3333-2222",
+        "site": "techpalhoca.com"
+    },
+    {
+        "nome": "Moda & Estilo",
+        "categoria": "moda",
+        "email": "contato@modaestilo.com",
+        "telefone": "(48) 3333-3333",
+        "site": "modaestilo.com"
+    }
+]
