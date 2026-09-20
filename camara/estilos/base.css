@@ -366,3 +366,37 @@ footer {
     border-radius: 6px;
     border: 1px solid var(--cinza-borda);
 }
+
+/* CLIMA */
+.temp-grande {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--azul-escuro);
+}
+
+.clima img {
+    width: 80px;
+    height: auto;
+}
+
+/* DESTAQUES */
+.empresa-card .logo-empresa {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.nivel-ouro {
+    color: #c9a227;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.nivel-prata {
+    color: #888;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}

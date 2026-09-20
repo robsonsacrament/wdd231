@@ -29,3 +29,19 @@ if (hamburger && navMenu) {
         hamburger.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
     });
 }
+
+// ============================================
+// EVENTOS
+// ============================================
+
+const eventosLista = document.getElementById('eventos-lista');
+if (eventosLista) {
+    const eventos = [
+        'Workshop de Marketing Digital - 25/09',
+        'Almoço de Networking - 30/09',
+        'Feira de Negócios - 05/10'
+    ];
+    eventosLista.innerHTML = '<ul>' +
+        eventos.map(e => `<li>${e}</li>`).join('') +
+        '</ul>';
+}
