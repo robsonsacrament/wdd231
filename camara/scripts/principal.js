@@ -2,14 +2,19 @@
 // DATAS DO RODAPÉ
 // ============================================
 
-document.getElementById('anoatual').textContent = new Date().getFullYear();
+const anoAtual = document.getElementById('anoatual');
+if (anoAtual) {
+    anoAtual.textContent = new Date().getFullYear();
+}
 
-const data = new Date(document.lastModified);
-const dia = String(data.getDate()).padStart(2, '0');
-const mes = String(data.getMonth() + 1).padStart(2, '0');
-const ano = data.getFullYear();
-document.getElementById('ultimaModificacao').textContent =
-    `Última modificação: ${dia}/${mes}/${ano}`;
+const modElement = document.getElementById('ultimaModificacao');
+if (modElement) {
+    const data = new Date(document.lastModified);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = data.getFullYear();
+    modElement.textContent = `Última modificação: ${dia}/${mes}/${ano}`;
+}
 
 // ============================================
 // MENU HAMBÚRGUER
