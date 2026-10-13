@@ -53,13 +53,13 @@
             <span aria-hidden="true">🏃</span>
             <p class="logo-nome">Corrida & Vida</p>
         </div>
-        <nav aria-label="Navegação principal">
+        <nav id="menu-principal" aria-label="Navegação principal">
             <a href="index.html">Início</a>
             <a href="treinos.html" class="active">Treinos</a>
             <a href="contato.html">Contato</a>
             <a href="referencias.html">Referências</a>
         </nav>
-        <button id="menu-hamburger" aria-expanded="false" aria-label="Abrir menu">☰</button>
+        <button id="menu-hamburger" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
     </header>
 
     <main>
@@ -79,7 +79,7 @@
 
         <!-- Modal de detalhes -->
         <dialog id="modal-treino" aria-labelledby="modal-titulo">
-            <h2 id="modal-titulo"></h2>
+            <h2 id="modal-titulo">Detalhes do treino</h2>
             <div id="modal-corpo"></div>
             <button id="fechar-modal" class="btn" aria-label="Fechar detalhes do treino">Fechar</button>
         </dialog>
@@ -91,7 +91,7 @@
         <p class="footer-links">
             <a href="referencias.html">Referências</a>
             <a href="https://www.youtube.com/@SEU_CANAL" target="_blank" rel="noopener">
-                🎥 Vídeo de demonstração
+                <span aria-hidden="true">🎥</span> Vídeo de demonstração
             </a>
         </p>
     </footer>
