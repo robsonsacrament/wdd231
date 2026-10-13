@@ -1,0 +1,280 @@
+/* ========================================
+   FORMULÁRIO DE AVALIAÇÃO - ESTILO
+   ======================================== */
+
+:root {
+    --azul-escuro: #1e3a5f;
+    --laranja: #e76f51;
+    --amarelo: #f4a261;
+    --cinza-claro: #f4f7fa;
+    --branco: #ffffff;
+    --texto: #1e2b37;
+    --borda: #ddd;
+    --fonte-titulo: 'Merriweather', Georgia, serif;
+    --fonte-corpo: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background: var(--cinza-claro);
+    color: var(--texto);
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    border-radius: 12px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    flex: 1;
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--azul-escuro);
+}
+
+.required {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+/* Select, input, textarea */
+select, input[type="date"], input[type="text"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--azul-escuro);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+/* ===== CLASSIFICAÇÃO ESTRELAS ===== */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2.2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: var(--amarelo);
+}
+
+.rating input:checked + label {
+    color: var(--amarelo);
+}
+
+.rating-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* ===== CHECKBOX ===== */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    margin-top: 6px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--azul-escuro);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-item label {
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 4px 0;
+}
+
+.checkbox-item:hover label {
+    color: var(--azul-escuro);
+}
+
+/* ===== BOTÃO ===== */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--laranja);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background: var(--amarelo);
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ===== PÁGINA DE CONFIRMAÇÃO ===== */
+.confirmacao {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.confirmacao h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+.confirmacao p {
+    margin-bottom: 20px;
+    color: var(--texto);
+}
+
+.contador-box {
+    background: var(--cinza-claro);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.contador-box p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin: 0;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+    background: var(--laranja);
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    max-width: 700px;
+    margin: 20px auto 0;
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    padding-top: 16px;
+    border-top: 1px solid var(--borda);
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .rating label {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .rating label {
+        font-size: 1.4rem;
+    }
+
+    .btn-submit {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+}

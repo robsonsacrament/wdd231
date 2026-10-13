@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida & Vida - Treinos</title>
+    <meta name="description" content="Planos de treino e dicas para corredores de rua de todos os níveis.">
+    <meta name="author" content="Robson Sacramento Beserra">
+
+       <!-- Open Graph / Redes Sociais -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Corrida & Vida">
+<meta property="og:title" content="Corrida & Vida - Início">
+<meta property="og:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação para evoluir a cada passo.">
+<meta property="og:url" content="https://robsonsacrament.github.io/wdd231/final/index.html">
+<meta property="og:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+<meta property="og:image:alt" content="Corredor de rua ao pôr do sol">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Corrida & Vida - Início">
+<meta name="twitter:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação.">
+<meta name="twitter:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+
+    <!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/style.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span>🏃</span>
+            <h1>Corrida & Vida</h1>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="treinos.html" class="active">Treinos</a>
+            <a href="contato.html">Contato</a>
+            <a href="referencias.html">Referências</a>
+        </nav>
+        <button id="menu-hamburger">☰</button>
+    </header>
+
+    <main>
+        <h1>Planos de Treino</h1>
+
+        <div class="filtro">
+            <label for="categoria">Filtrar por nível:</label>
+            <select id="categoria">
+                <option value="todos">Todos</option>
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+            </select>
+        </div>
+
+        <div class="treinos-grid" id="treinos-grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> Corrida & Vida - Robson Sacramento Beserra</p>
+        <p id="modificacao"></p>
+        <p><a href="referencias.html">Referências</a></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida & Vida - Página Inicial</title>
+    <meta name="description" content="Corrida & Vida - Dicas, treinos e inspiração para corredores de rua de todos os níveis.">
+    <meta name="author" content="Robson Sacramento Beserra">
+
+      <!-- Open Graph / Redes Sociais -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Corrida & Vida">
+<meta property="og:title" content="Corrida & Vida - Início">
+<meta property="og:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação para evoluir a cada passo.">
+<meta property="og:url" content="https://robsonsacrament.github.io/wdd231/final/index.html">
+<meta property="og:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+<meta property="og:image:alt" content="Corredor de rua ao pôr do sol">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Corrida & Vida - Início">
+<meta name="twitter:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação.">
+<meta name="twitter:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+
+    <!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/style.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span>🏃</span>
+            <h1>Corrida & Vida</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Início</a>
+            <a href="treinos.html">Treinos</a>
+            <a href="contato.html">Contato</a>
+            <a href="referencias.html">Referências</a>
+        </nav>
+        <button id="menu-hamburger">☰</button>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <img src="imagens/hero.webp" alt="Corredor de rua" loading="lazy">
+            <div class="hero-content">
+                <h2>Correr é mais que um esporte</h2>
+                <p>É um estilo de vida. Encontre dicas, treinos e motivação para evoluir a cada passo.</p>
+                <a href="treinos.html" class="btn">Ver Treinos</a>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="cards">
+            <h2>Por que correr?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="imagens/corrida1.webp" alt="Corredor" loading="lazy">
+                    <h3>Para todos os níveis</h3>
+                    <p>Do iniciante ao maratonista, temos conteúdo adaptado para sua evolução.</p>
+                </div>
+                <div class="card">
+                    <img src="imagens/corrida2.webp" alt="Grupo de corrida" loading="lazy">
+                    <h3>Comunidade</h3>
+                    <p>Compartilhe experiências, desafios e conquistas com outros corredores.</p>
+                </div>
+                <div class="card">
+                    <img src="imagens/corrida3.webp" alt="Corredor feliz" loading="lazy">
+                    <h3>Saúde e bem-estar</h3>
+                    <p>Corrida transforma o corpo e a mente. Descubra os benefícios.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos -->
+        <section class="depoimentos">
+            <h2>O que os corredores dizem</h2>
+            <div id="depoimentos"></div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <h2>Pronto para correr?</h2>
+            <p>Receba dicas exclusivas e planos de treino no seu e-mail.</p>
+            <a href="contato.html" class="btn">Inscrever-se</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> Corrida & Vida - Robson Sacramento Beserra</p>
+        <p id="modificacao"></p>
+        <p><a href="referencias.html">Referências</a></p>
+    </footer>
+
+</body>
+</html>

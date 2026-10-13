@@ -1,0 +1,203 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color: #f4f7fa;
+    color: #1e2b37;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    text-align: center;
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do curso - obrigatório */
+header #course-title {
+    display: block;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+header .logo {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* CORRIGIDO: contraste - fundo mais escuro para links brancos */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.25); /* aumentado de 15% para 25% */
+}
+
+nav a:hover {
+    background-color: #f4a261;
+    color: #1e2b37;
+    transform: scale(1.05);
+}
+
+/* Main */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Apenas UM h1 dentro do main */
+main > h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.8rem;
+    color: #1e3a5f;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #e0e7ee;
+    padding-bottom: 12px;
+}
+
+/* Cartões usando CSS Grid */
+.card {
+    background-color: #f9fafc;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #1e3a5f;
+}
+
+.card h2 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.3rem;
+    color: #1e3a5f;
+    margin-bottom: 12px;
+}
+
+.card-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.card-text p {
+    margin-bottom: 10px;
+    text-align: justify;
+    color: #2c3e50;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Links extras */
+.extra-links {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #f9fafc;
+    border-radius: 10px;
+}
+
+.extra-links h3 {
+    font-family: 'Merriweather', Georgia, serif;
+    color: #1e3a5f;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.extra-links ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.extra-links ul li a {
+    color: #1e3a5f;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: #e8ecf1;
+}
+
+.extra-links ul li a:hover {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+/* Responsividade do Grid */
+@media (max-width: 600px) {
+    .card-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .card-image {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .extra-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Rodapé */
+footer {
+    max-width: 900px;
+    margin: 25px auto 0;
+    text-align: center;
+    color: #5a6b7a;
+    font-size: 0.9rem;
+    padding-top: 15px;
+    border-top: 1px solid #e0e7ee;
+}
+
+footer p {
+    margin: 5px 0;
+}
