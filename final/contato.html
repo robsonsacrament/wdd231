@@ -7,42 +7,41 @@
     <meta name="description" content="Inscreva-se para receber dicas e planos de treino de corrida.">
     <meta name="author" content="Robson Sacramento Beserra">
 
-       <!-- Open Graph / Redes Sociais -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Corrida & Vida">
-<meta property="og:title" content="Corrida & Vida - Início">
-<meta property="og:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação para evoluir a cada passo.">
-<meta property="og:url" content="https://robsonsacrament.github.io/wdd231/final/index.html">
-<meta property="og:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
-<meta property="og:image:alt" content="Corredor de rua ao pôr do sol">
-<meta property="og:locale" content="pt_BR">
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Corrida & Vida">
+    <meta property="og:title" content="Corrida & Vida - Contato">
+    <meta property="og:description" content="Inscreva-se para receber dicas exclusivas e planos de treino no seu e-mail.">
+    <meta property="og:url" content="https://robsonsacrament.github.io/wdd231/final/contato.html">
+    <meta property="og:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+    <meta property="og:image:alt" content="Contato Corrida & Vida">
+    <meta property="og:locale" content="pt_BR">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Corrida & Vida - Início">
-<meta name="twitter:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação.">
-<meta name="twitter:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corrida & Vida - Contato">
+    <meta name="twitter:description" content="Inscreva-se para receber dicas exclusivas.">
+    <meta name="twitter:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
 
     <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos/style.css">
-    <script src="scripts/main.js" defer></script>
-</head>
+<script type="module" src="scripts/main.js"></script></head>
 <body>
 
     <header>
         <div class="logo">
             <span>🏃</span>
-            <h1>Corrida & Vida</h1>
+            <p class="logo-nome">Corrida & Vida</p>
         </div>
         <nav>
             <a href="index.html">Início</a>
@@ -50,14 +49,14 @@
             <a href="contato.html" class="active">Contato</a>
             <a href="referencias.html">Referências</a>
         </nav>
-        <button id="menu-hamburger">☰</button>
+        <button id="menu-hamburger" aria-expanded="false" aria-label="Abrir menu">☰</button>
     </header>
 
     <main>
         <h1>Inscreva-se para Receber Dicas</h1>
         <p>Preencha o formulário abaixo e receba planos de treino e dicas exclusivas.</p>
 
-        <form id="form-contato">
+        <form id="form-contato" action="formulario-acao.html" method="get">
             <div>
                 <label for="nome">Nome completo <span class="required">*</span></label>
                 <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -101,6 +100,7 @@
         <p>&copy; <span id="ano"></span> Corrida & Vida - Robson Sacramento Beserra</p>
         <p id="modificacao"></p>
         <p><a href="referencias.html">Referências</a></p>
+        <a href="https://www.youtube.com/@SEU_CANAL" target="_blank" rel="noopener">🎥 Vídeo de demonstração</a>
     </footer>
 
 </body>

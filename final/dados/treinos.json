@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "titulo": "Iniciante: 5km em 8 semanas",
+    "nivel": "iniciante",
+    "distancia": "5 km",
+    "duracao": "30 min",
+    "descricao": "Plano progressivo para começar a correr do zero e completar 5km em 8 semanas."
+  },
+  {
+    "id": 2,
+    "titulo": "Intermediário: 10km em 10 semanas",
+    "nivel": "intermediario",
+    "distancia": "10 km",
+    "duracao": "50 min",
+    "descricao": "Aumente sua resistência e velocidade para provas de 10km."
+  },
+  {
+    "id": 3,
+    "titulo": "Avançado: Meia Maratona",
+    "nivel": "avancado",
+    "distancia": "21 km",
+    "duracao": "1h 45min",
+    "descricao": "Treino intenso para provas de 21km com foco em pace e resistência."
+  },
+  {
+    "id": 4,
+    "titulo": "Iniciante: Corrida e Caminhada",
+    "nivel": "iniciante",
+    "distancia": "3 km",
+    "duracao": "25 min",
+    "descricao": "Alternância de corrida e caminhada, ideal para os primeiros passos."
+  },
+  {
+    "id": 5,
+    "titulo": "Intermediário: Treino de Tiro",
+    "nivel": "intermediario",
+    "distancia": "6 km",
+    "duracao": "40 min",
+    "descricao": "Sessões de tiro para ganhar velocidade e melhorar o VO2 máximo."
+  },
+  {
+    "id": 6,
+    "titulo": "Avançado: Maratona 42km",
+    "nivel": "avancado",
+    "distancia": "42 km",
+    "duracao": "3h 30min",
+    "descricao": "Plano completo de 16 semanas para maratonistas experientes."
+  },
+  {
+    "id": 7,
+    "titulo": "Iniciante: Primeira Corrida Contínua",
+    "nivel": "iniciante",
+    "distancia": "2 km",
+    "duracao": "20 min",
+    "descricao": "Do caminhar ao correr sem parar por 20 minutos seguidos."
+  },
+  {
+    "id": 8,
+    "titulo": "Intermediário: Fartlek",
+    "nivel": "intermediario",
+    "distancia": "7 km",
+    "duracao": "45 min",
+    "descricao": "Mude o ritmo livremente para melhorar a adaptação aeróbica."
+  },
+  {
+    "id": 9,
+    "titulo": "Avançado: Longão de Domingo",
+    "nivel": "avancado",
+    "distancia": "25 km",
+    "duracao": "2h 15min",
+    "descricao": "Treino longo para construir resistência para provas de fundo."
+  },
+  {
+    "id": 10,
+    "titulo": "Iniciante: Couch to 5K",
+    "nivel": "iniciante",
+    "distancia": "5 km",
+    "duracao": "35 min",
+    "descricao": "Método clássico em 9 semanas para sair do sofá aos 5km."
+  },
+  {
+    "id": 11,
+    "titulo": "Intermediário: Tempo Run",
+    "nivel": "intermediario",
+    "distancia": "8 km",
+    "duracao": "55 min",
+    "descricao": "Corrida em ritmo constante e forte para melhorar o limiar."
+  },
+  {
+    "id": 12,
+    "titulo": "Avançado: Intervalado 400m",
+    "nivel": "avancado",
+    "distancia": "10 km",
+    "duracao": "1h 10min",
+    "descricao": "Séries de 400m em alta intensidade para ganho de velocidade."
+  },
+  {
+    "id": 13,
+    "titulo": "Iniciante: Recuperação Ativa",
+    "nivel": "iniciante",
+    "distancia": "3 km",
+    "duracao": "25 min",
+    "descricao": "Corrida leve para dias de recuperação, sem forçar o corpo."
+  },
+  {
+    "id": 14,
+    "titulo": "Intermediário: Subidas",
+    "nivel": "intermediario",
+    "distancia": "6 km",
+    "duracao": "45 min",
+    "descricao": "Treino com subidas para fortalecer pernas e melhorar a potência."
+  },
+  {
+    "id": 15,
+    "titulo": "Avançado: Simulado de Prova",
+    "nivel": "avancado",
+    "distancia": "15 km",
+    "duracao": "1h 30min",
+    "descricao": "Simulação completa de prova com pace alvo e estratégia de hidratação."
+  }
+]

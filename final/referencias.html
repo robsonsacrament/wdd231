@@ -4,44 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corrida & Vida - Referências</title>
-    <meta name="description" content="Referências de imagens usadas no site Corrida & Vida.">
+    <meta name="description" content="Referências de imagens, conteúdos e atribuições usadas no site Corrida & Vida.">
     <meta name="author" content="Robson Sacramento Beserra">
 
     <!-- Open Graph / Redes Sociais -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Corrida & Vida">
-<meta property="og:title" content="Corrida & Vida - Início">
-<meta property="og:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação para evoluir a cada passo.">
-<meta property="og:url" content="https://robsonsacrament.github.io/wdd231/final/index.html">
-<meta property="og:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
-<meta property="og:image:alt" content="Corredor de rua ao pôr do sol">
-<meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Corrida & Vida">
+    <meta property="og:title" content="Corrida & Vida - Referências">
+    <meta property="og:description" content="Fontes, atribuições e créditos do site Corrida & Vida.">
+    <meta property="og:url" content="https://robsonsacrament.github.io/wdd231/final/referencias.html">
+    <meta property="og:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+    <meta property="og:image:alt" content="Referências - Corrida & Vida">
+    <meta property="og:locale" content="pt_BR">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Corrida & Vida - Início">
-<meta name="twitter:description" content="Correr é mais que um esporte. Encontre dicas, treinos e motivação.">
-<meta name="twitter:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corrida & Vida - Referências">
+    <meta name="twitter:description" content="Fontes e atribuições do site.">
+    <meta name="twitter:image" content="https://robsonsacrament.github.io/wdd231/final/imagens/hero.webp">
 
     <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos/style.css">
+    <script type="module" src="scripts/main.js"></script>
 </head>
 <body>
 
     <header>
         <div class="logo">
             <span>🏃</span>
-            <h1>Corrida & Vida</h1>
+            <p class="logo-nome">Corrida & Vida</p>
         </div>
         <nav>
             <a href="index.html">Início</a>
@@ -49,7 +50,7 @@
             <a href="contato.html">Contato</a>
             <a href="referencias.html" class="active">Referências</a>
         </nav>
-        <button id="menu-hamburger">☰</button>
+        <button id="menu-hamburger" aria-expanded="false" aria-label="Abrir menu">☰</button>
     </header>
 
     <main>
@@ -58,14 +59,52 @@
         <section>
             <h2>Imagens</h2>
             <ul>
-                <li><strong>Hero:</strong> https://br.pinterest.com/pin/6333255724257008/ - Corredor de rua</li>
-                <li><strong>Corrida 1, 2, 3:</strong> pinterest - Corredores em ação</li>
+                <li>
+                    <strong>Hero:</strong>
+                    <a href="https://br.pinterest.com/pin/6333255724257008/" target="_blank" rel="noopener">
+                        Pinterest — Corredor de rua
+                    </a>
+                </li>
+                <li>
+                    <strong>Corrida 1, 2, 3:</strong>
+                    Pinterest — Corredores em ação
+                </li>
             </ul>
+        </section>
 
+        <section>
             <h2>Conteúdo</h2>
             <ul>
-                <li>Planos de treino baseados em recomendações da Runner's World - https://www.runnersworld.com</li>
+                <li>
+                    Planos de treino baseados em recomendações da
+                    <a href="https://www.runnersworld.com" target="_blank" rel="noopener">Runner's World</a>
+                </li>
                 <li>Dicas de corrida adaptadas de experiências pessoais</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ícones</h2>
+            <ul>
+                <li>
+                    O favicon e o ícone do cabeçalho utilizam o emoji "Person Running" do projeto
+                    <a href="https://twemoji.twitter.com/" target="_blank" rel="noopener">Twemoji</a>,
+                    licenciado sob
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY 4.0</a>.
+                </li>
+                <li>
+                    Favicon gerado com
+                    <a href="https://favicon.io/emoji-favicons/" target="_blank" rel="noopener">favicon.io</a>.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ferramentas e Tecnologias</h2>
+            <ul>
+                <li>HTML5, CSS3 e JavaScript (ES Modules)</li>
+                <li>Google Fonts — Inter e Merriweather</li>
+                <li>VS Code + Live Server + GitHub Pages</li>
             </ul>
         </section>
     </main>
@@ -73,7 +112,12 @@
     <footer>
         <p>&copy; <span id="ano"></span> Corrida & Vida - Robson Sacramento Beserra</p>
         <p id="modificacao"></p>
-        <p><a href="referencias.html">Referências</a></p>
+        <p>
+            <a href="referencias.html">Referências</a> |
+            <a href="https://www.youtube.com/@SEU_CANAL" target="_blank" rel="noopener">
+                🎥 Vídeo de demonstração
+            </a>
+        </p>
     </footer>
 
 </body>

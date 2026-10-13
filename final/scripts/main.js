@@ -1,151 +1,102 @@
 // ============================================
-// RODAPÉ - DATA
+// MÓDULO PRINCIPAL — Corrida & Vida
 // ============================================
 
-// Ano atual
-document.getElementById('ano').textContent = new Date().getFullYear();
-
-// Data da última modificação
-const data = new Date(document.lastModified);
-const dia = String(data.getDate()).padStart(2, '0');
-const mes = String(data.getMonth() + 1).padStart(2, '0');
-const ano = data.getFullYear();
-const horas = String(data.getHours()).padStart(2, '0');
-const minutos = String(data.getMinutes()).padStart(2, '0');
-
-document.getElementById('modificacao').textContent =
-    'Última modificação: ' + dia + '/' + mes + '/' + ano + ' ' + horas + ':' + minutos;
+import { carregarTreinos } from './treinos.js';
 
 // ============================================
-// MENU HAMBÚRGUER (DOM + Evento)
+// RODAPÉ — Ano atual + Data de modificação
 // ============================================
+const anoEl = document.getElementById('ano');
+if (anoEl) anoEl.textContent = new Date().getFullYear();
 
+const modEl = document.getElementById('modificacao');
+if (modEl) {
+    const d = new Date(document.lastModified);
+    const pad = (n) => String(n).padStart(2, '0');
+    modEl.textContent = `Última modificação: ${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+// ============================================
+// MENU HAMBÚRGUER (responsivo)
+// ============================================
 const hamburger = document.getElementById('menu-hamburger');
 const nav = document.querySelector('nav');
 
 if (hamburger && nav) {
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', () => {
         nav.classList.toggle('open');
-        hamburger.textContent = nav.classList.contains('open') ? '✕' : '☰';
+        const aberto = nav.classList.contains('open');
+        hamburger.textContent = aberto ? '✕' : '☰';
+        hamburger.setAttribute('aria-expanded', aberto);
     });
 }
 
 // ============================================
-// DEPOIMENTOS (Array + Template Literal)
+// DEPOIMENTOS (array + template literals)
 // ============================================
-
 const depoimentos = [
     { autor: 'Ana Paula', texto: 'Comecei a correr com os treinos do site e em 3 meses fiz minha primeira prova de 5km!' },
     { autor: 'Carlos Mendes', texto: 'Os planos de treino são muito bem estruturados. Evoluí muito com a ajuda do Corrida & Vida.' },
     { autor: 'Fernanda Souza', texto: 'A melhor comunidade de corrida online. Motivam a gente a nunca desistir.' }
 ];
 
-const container = document.getElementById('depoimentos');
-
-if (container) {
-    let html = '';
-    for (let i = 0; i < depoimentos.length; i++) {
-        html += '<div class="depoimento">' +
-            '<p>"' + depoimentos[i].texto + '"</p>' +
-            '<p class="autor">— ' + depoimentos[i].autor + '</p>' +
-            '</div>';
-    }
-    container.innerHTML = html;
+const containerDep = document.getElementById('depoimentos');
+if (containerDep) {
+    containerDep.innerHTML = depoimentos.map(d => `
+        <div class="depoimento">
+            <p>"${d.texto}"</p>
+            <p class="autor">— ${d.autor}</p>
+        </div>
+    `).join('');
 }
 
 // ============================================
-// FILTRO DE TREINOS (Array + Método filter)
+// CARREGAR TREINOS (só roda na página treinos.html)
 // ============================================
-
-const treinos = [
-    { id: 1, titulo: 'Iniciante: 5km em 8 semanas', nivel: 'iniciante', descricao: 'Plano progressivo para começar a correr.' },
-    { id: 2, titulo: 'Intermediário: 10km em 10 semanas', nivel: 'intermediario', descricao: 'Aumente sua resistência e velocidade.' },
-    { id: 3, titulo: 'Avançado: Meia maratona', nivel: 'avancado', descricao: 'Treino intenso para provas de 21km.' },
-    { id: 4, titulo: 'Iniciante: Corrida e caminhada', nivel: 'iniciante', descricao: 'Alternância de corrida e caminhada.' },
-    { id: 5, titulo: 'Intermediário: Treino de tiro', nivel: 'intermediario', descricao: 'Sessões de tiro para ganhar velocidade.' },
-    { id: 6, titulo: 'Avançado: Maratona 42km', nivel: 'avancado', descricao: 'Plano completo para maratonistas.' }
-];
-
-function renderizarTreinos(filtro) {
-    const grid = document.getElementById('treinos-grid');
-    if (!grid) return;
-
-    let filtrados;
-    if (filtro === 'todos') {
-        filtrados = treinos;
-    } else {
-        filtrados = [];
-        for (let i = 0; i < treinos.length; i++) {
-            if (treinos[i].nivel === filtro) {
-                filtrados.push(treinos[i]);
-            }
-        }
-    }
-
-    if (filtrados.length === 0) {
-        grid.innerHTML = '<p style="text-align:center;">Nenhum treino encontrado para este nível.</p>';
-        return;
-    }
-
-    let html = '';
-    for (let i = 0; i < filtrados.length; i++) {
-        html += '<div class="treino-card">' +
-            '<span class="nivel">' + filtrados[i].nivel + '</span>' +
-            '<h3>' + filtrados[i].titulo + '</h3>' +
-            '<p>' + filtrados[i].descricao + '</p>' +
-            '</div>';
-    }
-    grid.innerHTML = html;
-}
-
-const filtroSelect = document.getElementById('categoria');
-
-if (filtroSelect) {
-    renderizarTreinos('todos');
-
-    filtroSelect.addEventListener('change', function() {
-        renderizarTreinos(this.value);
-    });
+if (document.getElementById('treinos-grid')) {
+    carregarTreinos();
 }
 
 // ============================================
-// FORMULÁRIO (Objeto + Array + localStorage)
+// FORMULÁRIO DE CONTATO
+// Salva a inscrição no localStorage ANTES
+// de o formulário ser enviado via GET
+// para formulario-acao.html
 // ============================================
-
 const form = document.getElementById('form-contato');
 
 if (form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    form.addEventListener('submit', () => {
+        // Captura os valores do formulário
+        const nome     = document.getElementById('nome').value.trim();
+        const email    = document.getElementById('email').value.trim();
+        const nivel    = document.getElementById('nivel').value;
+        const objetivo = document.getElementById('objetivo').value.trim();
 
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const nivel = document.getElementById('nivel').value;
-
-        if (!nome || !email || !nivel) {
-            alert('Preencha todos os campos obrigatórios.');
-            return;
-        }
-
-        // Objeto
+        // Cria o objeto da inscrição
         const inscricao = {
             nome: nome,
             email: email,
             nivel: nivel,
+            objetivo: objetivo,
             data: new Date().toISOString()
         };
 
-        // Array + localStorage
-        let inscricoes = JSON.parse(localStorage.getItem('inscricoes')) || [];
+        // Recupera inscrições anteriores (ou array vazio)
+        const inscricoes = JSON.parse(localStorage.getItem('inscricoes')) || [];
+
+        // Adiciona a nova inscrição
         inscricoes.push(inscricao);
+
+        // Salva no localStorage
         localStorage.setItem('inscricoes', JSON.stringify(inscricoes));
 
-        // Exibe mensagem
-        document.getElementById('mensagem-sucesso').style.display = 'block';
-        document.getElementById('nome-usuario').textContent = nome;
-        form.reset();
-        form.style.display = 'none';
+        console.log('✅ Inscrição salva no localStorage:', inscricao);
+        console.log('📋 Total de inscrições:', inscricoes.length);
 
-        console.log('Inscrições:', inscricoes);
+        // ⚠️ IMPORTANTE: NÃO usamos preventDefault() aqui!
+        // Assim o formulário é enviado normalmente via GET para
+        // formulario-acao.html?nome=...&email=...
     });
 }

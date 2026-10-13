@@ -1,14 +1,75 @@
+/* ===== FONTES LOCAIS ===== */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/inter-v12-latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/inter-v12-latin-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/inter-v12-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/merriweather-v30-latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/merriweather-v30-latin-700.woff2') format('woff2');
+}
+
 /* Cores e fontes */
 :root {
     --azul: #1e3a5f;
     --laranja: #e76f51;
+    --laranja-escuro: #c4451e;   /* NOVO: laranja com contraste AA */
     --amarelo: #f4a261;
     --cinza: #f4f7fa;
     --branco: #ffffff;
     --texto: #1e2b37;
     --borda: #ddd;
-    --fonte-titulo: 'Merriweather', Georgia, serif;
-    --fonte-corpo: 'Inter', Arial, Helvetica, sans-serif;
+    --fonte-titulo: 'Merriweather', 'Merriweather Fallback', Georgia, serif;
+    --fonte-corpo: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
+}
+
+/* ===== FONTES DE FALLBACK OTIMIZADAS (REDUZEM CLS) ===== */
+/* Essas fontes são usadas enquanto as fontes web carregam.
+   O 'size-adjust' faz com que ocupem o mesmo espaço que as fontes reais,
+   evitando que o conteúdo "pule" durante o carregamento. */
+
+@font-face {
+    font-family: 'Merriweather Fallback';
+    src: local('Georgia');
+    size-adjust: 96.13%;
+    ascent-override: 92.33%;
+    descent-override: 22.80%;
+    line-gap-override: 0.00%;
+}
+
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    size-adjust: 106.91%;
+    ascent-override: 90.36%;
+    descent-override: 22.37%;
+    line-gap-override: 0.00%;
 }
 
 * {
@@ -97,7 +158,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* ===== HERO SECTION - CORRIGIDA ===== */
+/* ===== HERO SECTION ===== */
 .hero {
     position: relative;
     margin-bottom: 25px;
@@ -130,6 +191,7 @@ h2 {
     text-align: center;
 }
 
+.hero-content h1,
 .hero-content h2 {
     color: var(--branco);
     font-size: 1.6rem;
@@ -142,14 +204,17 @@ h2 {
     color: var(--branco);
 }
 
+/* Botão hero com contraste AA */
 .hero-content .btn {
-    background: var(--laranja);
+    background: var(--laranja-escuro);
     color: var(--branco);
+    font-weight: 700;
 }
 
-.hero-content .btn:hover {
-    background: var(--amarelo);
-    color: var(--texto);
+.hero-content .btn:hover,
+.hero-content .btn:focus {
+    background: var(--azul);
+    color: var(--branco);
 }
 
 /* ===== RESPONSIVO - HERO ===== */
@@ -172,6 +237,7 @@ h2 {
         background: var(--azul);
     }
 
+    .hero-content h1,
     .hero-content h2 {
         font-size: 1.3rem;
     }
@@ -182,6 +248,7 @@ h2 {
 }
 
 @media (max-width: 480px) {
+    .hero-content h1,
     .hero-content h2 {
         font-size: 1.1rem;
     }
@@ -196,24 +263,29 @@ h2 {
 
     .hero-content .btn {
         font-size: 0.85rem;
-        padding: 6px 16px;
+        padding: 8px 16px;
     }
 }
 
-/* Botão */
+/* ===== BOTÃO PRINCIPAL - CONTRASTE AA ===== */
 .btn {
     display: inline-block;
-    background: var(--laranja);
+    background: var(--laranja-escuro);   /* CORRIGIDO: era #e76f51 */
     color: var(--branco);
-    padding: 8px 20px;
+    padding: 10px 22px;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     border: none;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-.btn:hover { background: var(--amarelo); }
+.btn:hover,
+.btn:focus {
+    background: var(--azul);
+    color: var(--branco);
+}
 
 /* Cards */
 .card-grid {
@@ -245,7 +317,7 @@ h2 {
     background: var(--branco);
     padding: 12px 18px;
     border-radius: 8px;
-    border-left: 4px solid var(--laranja);
+    border-left: 4px solid var(--laranja-escuro);
     margin-bottom: 10px;
 }
 
@@ -262,7 +334,8 @@ h2 {
 
 .cta h2 { color: var(--branco); }
 .cta .btn { background: var(--branco); color: var(--azul); }
-.cta .btn:hover { background: var(--laranja); color: var(--branco); }
+.cta .btn:hover,
+.cta .btn:focus { background: var(--laranja-escuro); color: var(--branco); }
 
 /* Treinos */
 .filtro {
@@ -289,8 +362,8 @@ h2 {
 
 .treino-card .nivel {
     display: inline-block;
-    background: var(--amarelo);
-    color: var(--branco);
+    background: var(--azul);
+    color: #ffffff;
     padding: 2px 10px;
     border-radius: 20px;
     font-size: 0.7rem;
@@ -298,34 +371,91 @@ h2 {
     text-transform: uppercase;
 }
 
-/* Formulário */
+.treino-card .treino-titulo {
+    font-size: 1.05rem;
+    font-family: var(--fonte-titulo);
+    color: var(--azul);
+    margin: 8px 0;
+    line-height: 1.3;
+}
+
+/* ===== FORMULÁRIO ===== */
 .form-contato { max-width: 500px; margin: 0 auto; }
-.form-contato div { margin-bottom: 12px; }
-.form-contato label { display: block; font-weight: 600; color: var(--azul); }
+
+.form-contato > div {
+    margin-bottom: 20px;   /* CORRIGIDO: era 12px, agora espaçamento adequado */
+}
+
+.form-contato label {
+    display: block;
+    font-weight: 600;
+    color: var(--azul);
+    margin-bottom: 6px;
+}
+
 .form-contato input,
 .form-contato select,
 .form-contato textarea {
     width: 100%;
-    padding: 8px 10px;
+    min-height: 44px;             /* Área de toque WCAG 2.2 */
+    padding: 10px 12px;           /* Padding interno maior */
     border: 1px solid var(--borda);
     border-radius: 6px;
+    font-size: 1rem;
+    font-family: var(--fonte-corpo);
+    box-sizing: border-box;       /* NOVO: garante que padding e border não somem ao width/height */
+    line-height: 1.5;             /* NOVO: ajuda a controlar altura mínima do texto */
 }
 
-.required { color: #e74c3c; }
+.form-contato input:focus,
+.form-contato select:focus,
+.form-contato textarea:focus {
+    outline: 3px solid var(--azul);
+    outline-offset: 2px;
+    border-color: var(--azul);
+}
 
-/* Rodapé */
+.form-contato input[type="checkbox"] {
+    width: auto;
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 8px;
+    accent-color: var(--azul);
+}
+
+.required { color: #c0392b; }  /* vermelho mais escuro = contraste AA */
+
+/* ===== RODAPÉ ===== */
 footer {
     max-width: 1100px;
     margin: 20px auto 0;
     text-align: center;
-    color: #888;
-    font-size: 0.85rem;
+    color: #4a5568;             /* CORRIGIDO: era #888, agora contraste AA */
+    font-size: 0.9rem;
     padding-top: 15px;
     border-top: 1px solid var(--borda);
 }
 
-footer p { margin: 4px 0; }
-footer a { color: var(--azul); }
+footer p { margin: 8px 0; }
+
+footer a {
+    color: var(--azul);
+    display: inline-block;
+    min-height: 44px;              /* Área de toque */
+    min-width: 44px;
+    padding: 12px 16px;
+    line-height: 1.4;
+    text-decoration: underline;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+footer a:hover,
+footer a:focus {
+    background: rgba(30, 58, 95, 0.1);
+    color: var(--laranja-escuro);
+}
 
 /* ===== RESPONSIVO GERAL ===== */
 @media (max-width: 768px) {
@@ -356,5 +486,250 @@ footer a { color: var(--azul); }
 @media (max-width: 480px) {
     body { padding: 8px; }
     main { padding: 12px; }
-    .btn { padding: 6px 14px; font-size: 0.9rem; }
+    .btn { padding: 10px 18px; font-size: 0.9rem; }
+}
+
+/* ===== MODAL ===== */
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 25px 30px;
+    max-width: 500px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+dialog h2 {
+    color: var(--azul);
+    margin-bottom: 15px;
+    font-family: var(--fonte-titulo);
+}
+
+dialog p { margin-bottom: 8px; }
+
+#fechar-modal {
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* ===== BOTÃO FAVORITO ===== */
+.treino-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.btn-favorito {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #6b7280;             /* CORRIGIDO: era #ccc, agora contraste AA */
+    transition: color 0.2s, transform 0.2s;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    line-height: 1;
+}
+
+.btn-favorito:hover,
+.btn-favorito:focus { transform: scale(1.2); color: #d97706; }
+.btn-favorito.ativo { color: #d97706; }   /* CORRIGIDO: laranja escuro AA */
+
+/* ===== META (distância, duração) ===== */
+.treino-meta {
+    list-style: none;
+    margin: 8px 0;
+    font-size: 0.85rem;
+    color: #1e2b37;              /* CORRIGIDO: era #555, agora AA */
+}
+
+.treino-meta li { margin: 2px 0; }
+
+.btn-detalhes {
+    margin-top: 10px;
+    background: var(--azul);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    min-height: 44px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.btn-detalhes:hover,
+.btn-detalhes:focus { background: var(--laranja-escuro); color: #ffffff; }
+
+.mensagem-erro,
+.mensagem-vazia {
+    text-align: center;
+    padding: 20px;
+    color: #4a5568;
+    grid-column: 1 / -1;
+}
+
+/* ===== PÁGINA DE AÇÃO DO FORMULÁRIO ===== */
+.dados-recebidos {
+    background: var(--cinza);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid var(--azul);
+}
+
+.dados-recebidos h2 {
+    color: var(--azul);
+    margin-bottom: 15px;
+    font-family: var(--fonte-titulo);
+}
+
+.dados-recebidos dl {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 12px 20px;
+    margin: 0;
+}
+
+.dados-recebidos dt {
+    font-weight: 700;
+    color: var(--azul);
+}
+
+.dados-recebidos dd {
+    margin: 0;
+    color: var(--texto);
+    word-break: break-word;
+}
+
+.sucesso-msg {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--texto);
+}
+
+.voltar-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* ===== LOGO NOME (substitui h1 no header) ===== */
+.logo-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--branco);
+}
+
+/* ===== FOOTER LINKS ===== */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    display: inline-block;
+    padding: 12px 16px;
+    min-height: 44px;
+    min-width: 44px;
+    color: var(--azul);
+    text-decoration: underline;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    background: rgba(30, 58, 95, 0.1);
+    color: var(--laranja-escuro);
+}
+
+/* ===== PÁGINA DE REFERÊNCIAS ===== */
+main section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--borda);
+}
+
+main section:last-of-type {
+    border-bottom: none;
+}
+
+main section h2 {
+    color: var(--azul);
+    margin-bottom: 12px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+}
+
+main section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+main section ul li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    border-bottom: 1px dotted var(--borda);
+}
+
+main section ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--laranja-escuro);
+    font-weight: 700;
+}
+
+main section a {
+    color: var(--azul);
+    text-decoration: underline;
+}
+
+main section a:hover,
+main section a:focus {
+    color: var(--laranja-escuro);
+}
+
+/* ===== TÍTULOS DO HERO ===== */
+.hero-content h1 {
+    color: var(--branco);
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    font-family: var(--fonte-titulo);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== TEXTO DE APOIO COM CONTRASTE AA ===== */
+.card p,
+.treino-descricao {
+    color: #2c3e50;
+}
+
+.filtro label {
+    color: var(--azul);
+    font-weight: 600;
 }
